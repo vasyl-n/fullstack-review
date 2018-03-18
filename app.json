@@ -1,0 +1,8 @@
+{
+    "name": "Repos fetcher",
+    "description": "This app does one little thing, and does it well.",
+    "keywords": [
+        "repo", 
+        "fetcher"
+    ]
+}
