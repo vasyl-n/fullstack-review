@@ -1,13 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fetcher');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fetcher');
 
-
-
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   console.log('connected to mongo')
-// });
 
 let repoSchema = mongoose.Schema({
   userName: String,
