@@ -14,9 +14,12 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/repos', function (req, res) {
+  // get user if 
+
+
   githubHelper.getReposByUsername(req.body.userName, function(repoData){
     JSON.parse(repoData).forEach(repo => {
-      db.save(repo, repo.owner.login, repo.name, repo.id, repo.html_url, Date.now())
+      db.save(repo.owner.login, repo.name, repo.id, repo.html_url, Date.now())
     });
   })
 });
